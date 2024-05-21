@@ -24,7 +24,7 @@ load_dotenv()
 
 # check open_ai_api_key in env, if it is not defined as a variable
 #it can be added manually in the code below
-#st.write("OPEN_AI_API_KEY",st.secrets["OpenAI_API_KEY"])
+st.write("OPEN_AI_API_KEY",st.secrets["OpenAI_API_KEY"])
 
 OPEN_AI_API_KEY = st.secrets["OpenAI_API_KEY"]
 
