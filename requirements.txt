@@ -1,5 +1,8 @@
 streamlit
 pandas
-pandasai
 python-dotenv
 openai
+pandasai
+matplotlib
+plotly
+PyYAML
