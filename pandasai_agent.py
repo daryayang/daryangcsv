@@ -167,19 +167,23 @@ if st.button("生成回复"):
                     st.write(response)
 
                 with tab2:
-                    if 'pie' in prompt.lower():
-                        fig = px.pie(dataframe)
-                    elif 'bar' in prompt.lower():
-                        fig = px.bar(dataframe)
-                    elif 'bubble' in prompt.lower():
-                        fig = px.scatter(dataframe)
-                    elif 'dot' in prompt.lower():
-                        fig = px.scatter(dataframe)
-                    elif 'time series' in prompt.lower():
-                        fig = px.line(dataframe)
-                    else:
-                        fig = px.histogram(dataframe)
-                    st.plotly_chart(fig)
+                    try:
+                        df_numeric = dataframe.select_dtypes(include=['number'])
+                        if 'pie' in prompt.lower():
+                            fig = px.pie(df_numeric)
+                        elif 'bar' in prompt.lower():
+                            fig = px.bar(df_numeric)
+                        elif 'bubble' in prompt.lower():
+                            fig = px.scatter(df_numeric)
+                        elif 'dot' in prompt.lower():
+                            fig = px.scatter(df_numeric)
+                        elif 'time series' in prompt.lower():
+                            fig = px.line(df_numeric)
+                        else:
+                            fig = px.histogram(df_numeric)
+                        st.plotly_chart(fig)
+                    except Exception as e:
+                        st.error(f"An error occurred while generating the chart: {e}")
 
                 with tab3:
                     st.write(agent.explain())
