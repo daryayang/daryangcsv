@@ -6,3 +6,4 @@ pandasai
 matplotlib
 plotly
 PyYAML
+langchain
