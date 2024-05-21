@@ -24,14 +24,14 @@ load_dotenv()
 
 # check open_ai_api_key in env, if it is not defined as a variable
 #it can be added manually in the code below
-st.write("OPEN_AI_API_KEY",st.secrets["OpenAI_API_KEY"])
+#st.write("OPEN_AI_API_KEY",st.secrets["OpenAI_API_KEY"])
 
 OPEN_AI_API_KEY = st.secrets["OpenAI_API_KEY"]
 
-if OPEN_AI_API_KEY is None or OPEN_AI_API_KEY == "":
-    st.error("open_ai_api_key 未设置为环境变量")
-else:
-    st.success("Open AI API 密钥已设置")
+#if OPEN_AI_API_KEY is None or OPEN_AI_API_KEY == "":
+ #   st.error("open_ai_api_key 未设置为环境变量")
+#else:
+ #   st.success("Open AI API 密钥已设置")
 
 # set tittle for Streamlit UI
 st.title("数据智能分析")
