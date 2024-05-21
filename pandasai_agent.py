@@ -156,60 +156,62 @@ if st.button("生成回复"):
         with st.spinner("计算中..."):
             try:
                 response = agent.chat(prompt)
-                if isinstance(response, str):
-                    tab1, tab2, tab3, tab4, tab5 = st.tabs([
-                        "Generated Response",
-                        "Generated Chart",
-                        "Explanation",
-                        "Generated Code",
-                        "Clarification Questions"
-                    ])
-                    with tab1:
-                        st.write(response)
+                st.write(f"Response type: {type(response)}")
+                if not isinstance(response, str):
+                    response = str(response)
+                tab1, tab2, tab3, tab4, tab5 = st.tabs([
+                    "Generated Response",
+                    "Generated Chart",
+                    "Explanation",
+                    "Generated Code",
+                    "Clarification Questions"
+                ])
+                with tab1:
+                    st.write(response)
 
-                    with tab2:
-                        try:
-                            df_numeric = dataframe.select_dtypes(include=['number'])
-                            if 'pie' in prompt.lower():
-                                fig = px.pie(df_numeric)
-                            elif 'bar' in prompt.lower():
-                                fig = px.bar(df_numeric)
-                            elif 'bubble' in prompt.lower():
-                                fig = px.scatter(df_numeric)
-                            elif 'dot' in prompt.lower():
-                                fig = px.scatter(df_numeric)
-                            elif 'time series' in prompt.lower():
-                                fig = px.line(df_numeric)
-                            else:
-                                fig = px.histogram(df_numeric)
-                            st.plotly_chart(fig)
-                        except Exception as e:
-                            st.error(f"An error occurred while generating the chart: {e}")
+                with tab2:
+                    try:
+                        df_numeric = dataframe.select_dtypes(include=['number'])
+                        if 'pie' in prompt.lower():
+                            fig = px.pie(df_numeric)
+                        elif 'bar' in prompt.lower():
+                            fig = px.bar(df_numeric)
+                        elif 'bubble' in prompt.lower():
+                            fig = px.scatter(df_numeric)
+                        elif 'dot' in prompt.lower():
+                            fig = px.scatter(df_numeric)
+                        elif 'time series' in prompt.lower():
+                            fig = px.line(df_numeric)
+                        else:
+                            fig = px.histogram(df_numeric)
+                        st.plotly_chart(fig)
+                    except Exception as e:
+                        st.error(f"An error occurred while generating the chart: {e}")
 
-                    with tab3:
-                        st.write(agent.explain())
+                with tab3:
+                    st.write(agent.explain())
 
-                    with tab4:
-                        st.write(f"生成代码 :")
-                        st.write(agent.last_code_executed)
+                with tab4:
+                    st.write(f"生成代码 :")
+                    st.write(agent.last_code_executed)
 
-                    with tab5:
-                        try:
-                            clarification_questions = agent.clarification_questions(response)
-                            if isinstance(clarification_questions, list):
-                                st.write("\n".join(clarification_questions))
-                            elif isinstance(clarification_questions, str):
-                                st.write(clarification_questions)
-                            else:
-                                st.error(f"Unexpected clarification questions type: {type(clarification_questions)}")
-                        except Exception as e:
-                            st.error(f"An error occurred while getting clarification questions: {e}")
-                else:
-                    st.error(f"Unexpected response type: {type(response)}")
-            except Exception as e:
-                st.error(f"An error occurred: {e}")
-    else:
-        st.warning("空文件无法生成回复")
+                with tab5:
+                    try:
+                        clarification_questions = agent.clarification_questions(response)
+                        if isinstance(clarification_questions, list):
+                            st.write("\n".join(clarification_questions))
+                        elif isinstance(clarification_questions, str):
+                            st.write(clarification_questions)
+                        else:
+                            st.error(f"Unexpected clarification questions type: {type(clarification_questions)}")
+                    except Exception as e:
+                        st.error(f"An error occurred while getting clarification questions: {e}")
+            else:
+                st.error(f"Unexpected response type: {type(response)}")
+        except Exception as e:
+            st.error(f"An error occurred: {e}")
+else:
+    st.warning("空文件无法生成回复")
 
 
 
