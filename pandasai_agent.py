@@ -200,14 +200,14 @@ if uploaded_files:
                 st.write(agent.last_code_executed)
 
             with ((((tab5)))):
-                clarification_question = str(agent.clarification_questions(agent.chat(prompt)))
-                clarification_question = clarification_question.replace("[","")
-                clarification_question = clarification_question.replace("]","")
-                clarification_question = clarification_question.replace(",","\n")
-                clarification_question = clarification_question.replace("'","\n")
+                try:
+                        clarification_questions = agent.clarification_questions(response)
+                        st.write("\n".join(clarification_questions))
+                    except Exception as e:
+                        st.error(f"An error occurred while getting clarification questions: {e}")
 
-                st.write(str(clarification_question))
-
+            except Exception as e:
+                st.error(f"An error occurred: {e}")
 
 
                     # if the question is empty give a message
