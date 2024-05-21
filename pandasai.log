@@ -1,0 +1,286 @@
+2024-05-07 03:39:14 [INFO] Question: 有多少公司发布报告
+2024-05-07 03:39:14 [INFO] Running PandasAI with openai LLM...
+2024-05-07 03:39:14 [INFO] Prompt ID: c9b6744a-a106-43db-b37f-7c4a2139d0e8
+2024-05-07 03:39:14 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-05-07 03:39:14 [INFO] Executing Step 0: ValidatePipelineInput
+2024-05-07 03:39:14 [INFO] Executing Step 1: CacheLookup
+2024-05-07 03:39:14 [INFO] Executing Step 2: PromptGeneration
+2024-05-07 03:39:14 [INFO] Using prompt: <dataframe>
+dfs[0]:1861x4
+标题,报告类型,发布日期,机构
+晋控煤业(601001)：经营提质增效 盈利逆势增长,策略,2024-05-06,国新证券股份有限公司
+2024年五一档回顾：票房同比微增 关注暑期档影片定档进展,基金,2024-05-02,华泰证券股份有限公司
+奥飞数据(300738)：经验质量持续提升 关注出海业务机遇,公司,2024-05-04,国海证券股份有限公司
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ 有多少公司发布报告
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2024-05-07 03:39:14 [INFO] Executing Step 3: CodeGenerator
+2024-05-07 03:39:16 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2024-05-07 03:39:16 [ERROR] Pipeline failed on step 3: Error code: 401 - {'error': {'message': 'Incorrect API key provided: OPEN_AI_***_KEY. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2024-05-07 03:39:24 [INFO] Question: 有多少公司发布报告
+2024-05-07 03:39:24 [INFO] Running PandasAI with openai LLM...
+2024-05-07 03:39:24 [INFO] Prompt ID: 7f025f29-cd5c-4f5a-b7fe-b3e6aba6c253
+2024-05-07 03:39:24 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-05-07 03:39:24 [INFO] Executing Step 0: ValidatePipelineInput
+2024-05-07 03:39:24 [INFO] Executing Step 1: CacheLookup
+2024-05-07 03:39:24 [INFO] Executing Step 2: PromptGeneration
+2024-05-07 03:39:24 [INFO] Using prompt: <dataframe>
+dfs[0]:1861x4
+标题,报告类型,发布日期,机构
+同仁堂(600085)：利润双位数增长 高基数下开门红,策略,2024-05-03,中航证券有限公司
+闻泰科技(600745)：业绩短期承压 产品集成业务有望逐步回暖,债券,2024-05-05,东方财富证券股份有限公司
+赛恩斯(688480)：订单高增、紫金药剂增厚利润 期待出海发力,创业板,2024-05-04,大同证券有限责任公司
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ 有多少公司发布报告
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2024-05-07 03:39:24 [INFO] Executing Step 3: CodeGenerator
+2024-05-07 03:39:25 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2024-05-07 03:39:25 [ERROR] Pipeline failed on step 3: Error code: 401 - {'error': {'message': 'Incorrect API key provided: OPEN_AI_***_KEY. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2024-05-08 19:01:20 [INFO] Question: 这个数据集是什么
+
+2024-05-08 19:01:20 [INFO] Running PandasAI with openai LLM...
+2024-05-08 19:01:20 [INFO] Prompt ID: 70b4b1c8-3bd4-49de-b008-d6d20017a514
+2024-05-08 19:01:20 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-05-08 19:01:20 [INFO] Executing Step 0: ValidatePipelineInput
+2024-05-08 19:01:20 [INFO] Executing Step 1: CacheLookup
+2024-05-08 19:01:20 [INFO] Executing Step 2: PromptGeneration
+2024-05-08 19:01:20 [INFO] Using prompt: <dataframe>
+dfs[0]:10x4
+title,time,url,content
+政经有话说|王志刚谈新型举国体制新特点,2021-01-04 22:17,http://www.xinhuanet.com/fortune/2021-07/23/c_1127684495.htm,
+不数不知道！中国高铁路网越织越密,2021-07-23 08:18,http://www.xinhuanet.com/fortune/2021-07/08/c_1127634257.htm,
+早知道·财讯热搜榜TOP10（6月28日）,2021-07-08 13:47,http://www.xinhuanet.com/fortune/2021-07/20/c_1127672423.htm,
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ 这个数据集是什么
+
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2024-05-08 19:01:20 [INFO] Executing Step 3: CodeGenerator
+2024-05-08 19:01:21 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2024-05-08 19:01:21 [ERROR] Pipeline failed on step 3: Error code: 401 - {'error': {'message': 'Incorrect API key provided: OPEN_AI_***_KEY. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2024-05-08 19:01:42 [INFO] Question: 有几个title
+2024-05-08 19:01:42 [INFO] Running PandasAI with openai LLM...
+2024-05-08 19:01:42 [INFO] Prompt ID: 9555a090-4c03-4410-948c-2544b0a1d43e
+2024-05-08 19:01:42 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-05-08 19:01:42 [INFO] Executing Step 0: ValidatePipelineInput
+2024-05-08 19:01:42 [INFO] Executing Step 1: CacheLookup
+2024-05-08 19:01:42 [INFO] Executing Step 2: PromptGeneration
+2024-05-08 19:01:42 [INFO] Using prompt: <dataframe>
+dfs[0]:10x4
+title,time,url,content
+国常会速览｜连续8年的国常会“新年首会”都在关注这件事,2021-01-07 16:46,http://www.xinhuanet.com/fortune/2021-06/28/c_1127603712.htm,
+不数不知道！中国高铁路网越织越密,2021-06-28 08:14,http://www.xinhuanet.com/fortune/2021-06/29/c_1127608119.htm,
+政经有话说|王志刚谈新型举国体制新特点,2021-07-20 08:22,http://www.xinhuanet.com/fortune/2021-07/14/c_1127654394.htm,
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ 有几个title
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2024-05-08 19:01:42 [INFO] Executing Step 3: CodeGenerator
+2024-05-08 19:01:43 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2024-05-08 19:01:43 [ERROR] Pipeline failed on step 3: Error code: 401 - {'error': {'message': 'Incorrect API key provided: OPEN_AI_***_KEY. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2024-05-08 19:05:06 [INFO] Question: nihao 
+
+2024-05-08 19:05:06 [INFO] Running PandasAI with openai LLM...
+2024-05-08 19:05:06 [INFO] Prompt ID: 863ae9c1-268f-4096-833a-f7fa9d13395a
+2024-05-08 19:05:06 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-05-08 19:05:06 [INFO] Executing Step 0: ValidatePipelineInput
+2024-05-08 19:05:06 [INFO] Executing Step 1: CacheLookup
+2024-05-08 19:05:06 [INFO] Executing Step 2: PromptGeneration
+2024-05-08 19:05:06 [INFO] Using prompt: <dataframe>
+dfs[0]:10x4
+title,time,url,content
+不数不知道！我国医保覆盖面竟然这么广,2021-06-30 14:08,http://www.xinhuanet.com/fortune/2021-01/07/c_1126956627.htm,
+国常会速览｜保障劳动者权益 平台企业抽成要公开,2021-01-07 16:46,http://www.xinhuanet.com/fortune/2021-07/14/c_1127654394.htm,
+国常会速览｜连续8年的国常会“新年首会”都在关注这件事,2021-01-04 22:17,http://www.xinhuanet.com/fortune/2021-06/28/c_1127603712.htm,
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ nihao 
+
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2024-05-08 19:05:06 [INFO] Executing Step 3: CodeGenerator
+2024-05-08 19:05:07 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2024-05-08 19:05:07 [ERROR] Pipeline failed on step 3: Error code: 401 - {'error': {'message': 'Incorrect API key provided: OPEN_AI_***_KEY. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2024-05-08 23:51:35 [INFO] Question: 你好
+2024-05-08 23:51:35 [INFO] Running PandasAI with openai LLM...
+2024-05-08 23:51:35 [INFO] Prompt ID: 142e5648-1c3b-4d73-a333-3f80c57b67d3
+2024-05-08 23:51:35 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-05-08 23:51:36 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2024-05-08 23:51:37 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2024-05-08 23:51:37 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2024-05-08 23:51:37 [INFO] Question: 你好
+2024-05-08 23:51:37 [INFO] Running PandasAI with openai LLM...
+2024-05-08 23:51:37 [INFO] Prompt ID: a27fd42c-8d5e-4086-b610-2082dd2f9a44
+2024-05-08 23:51:37 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-05-08 23:51:37 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2024-05-08 23:51:38 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2024-05-08 23:51:38 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2024-05-21 21:51:43 [INFO] Question: nihao 
+2024-05-21 21:51:43 [INFO] Running PandasAI with openai LLM...
+2024-05-21 21:51:43 [INFO] Prompt ID: b1311ed6-608f-4efa-819a-3973316066f0
+2024-05-21 21:51:43 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-05-21 21:51:44 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2024-05-21 21:51:45 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2024-05-21 21:51:45 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2024-05-21 21:51:45 [INFO] Question: nihao 
+2024-05-21 21:51:45 [INFO] Running PandasAI with openai LLM...
+2024-05-21 21:51:45 [INFO] Prompt ID: 73edde0c-c056-48cd-94cf-4cb2f6c20268
+2024-05-21 21:51:45 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-05-21 21:51:45 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2024-05-21 21:51:46 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2024-05-21 21:51:46 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2024-05-21 21:52:42 [INFO] Question: ihao 
+2024-05-21 21:52:42 [INFO] Running PandasAI with openai LLM...
+2024-05-21 21:52:42 [INFO] Prompt ID: 2e993436-ca9e-45a1-b55e-ff4e4a766044
+2024-05-21 21:52:42 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-05-21 21:52:43 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2024-05-21 21:52:43 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2024-05-21 21:52:44 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2024-05-21 21:52:44 [INFO] Question: ihao 
+2024-05-21 21:52:44 [INFO] Running PandasAI with openai LLM...
+2024-05-21 21:52:44 [INFO] Prompt ID: d633f915-cab4-43d8-8189-4ed5c45b8fb2
+2024-05-21 21:52:44 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-05-21 21:52:44 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2024-05-21 21:52:44 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2024-05-21 21:52:45 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2024-05-21 22:08:11 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2024-05-21 22:08:12 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2024-05-21 22:08:12 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2024-05-21 22:08:12 [INFO] Question: 
+2024-05-21 22:08:12 [INFO] Running PandasAI with openai LLM...
+2024-05-21 22:08:12 [INFO] Prompt ID: 46d5d07c-f9e0-4b35-bef0-86cf86dedefb
+2024-05-21 22:08:12 [INFO] Executing Pipeline: GenerateChatPipeline
+2024-05-21 22:08:12 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2024-05-21 22:08:13 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2024-05-21 22:08:13 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
