@@ -198,20 +198,17 @@ if st.button("生成回复"):
                 with tab5:
                     try:
                         clarification_questions = agent.clarification_questions(response)
-                        if isinstance(clarification_questions, list):
-                            st.write("\n".join(clarification_questions))
-                        elif isinstance(clarification_questions, str):
-                            st.write(clarification_questions)
-                        else:
-                            st.error(f"Unexpected clarification questions type: {type(clarification_questions)}")
+                        st.write(f"Clarification questions type: {type(clarification_questions)}")
+                        if not isinstance(clarification_questions, str):
+                            clarification_questions = str(clarification_questions)
+                        st.write(clarification_questions)
                     except Exception as e:
                         st.error(f"An error occurred while getting clarification questions: {e}")
-            else:
-                st.error(f"Unexpected response type: {type(response)}")
-        except Exception as e:
-            st.error(f"An error occurred: {e}")
-else:
-    st.warning("空文件无法生成回复")
+            except Exception as e:
+                st.error(f"An error occurred: {e}")
+    else:
+        st.warning("空文件无法生成回复")
+
 
 
 
