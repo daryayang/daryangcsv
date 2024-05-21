@@ -151,56 +151,45 @@ if uploaded_files:
 # check uploaded file, if the file is empty give a message
 # show the model's response as an answer
 
-    if st.button("生成回复"):
-        if dataframe.empty:
-            st.write("空文件无法生成回复")
-        else:
-            if prompt:
-                st.spinner("计算中...")
-            gen_code = agent.last_code_executed
-            #gen_response = str(agent.chat(prompt))
+if st.button("生成回复"):
+    if not dataframe.empty:
+        with st.spinner("计算中..."):
+            try:
+                response = agent.chat(prompt)
+                tab1, tab2, tab3, tab4, tab5 = st.tabs([
+                    "Generated Response",
+                    "Generated Chart",
+                    "Explanation",
+                    "Generated Code",
+                    "Clarification Questions"
+                ])
+                with tab1:
+                    st.write(response)
 
-            tab1, tab2, tab3, tab4, tab5  = st.tabs(["Generated Response",
-                                               "Generated Chart",
-                                               "Explanation",
-                                               "Generated Code",
-                                               "Clarification Questions"]
-                                             )
-            with tab1:
-                    if prompt:
-                        st.write(str(agent.chat(prompt)))
+                with tab2:
+                    if 'pie' in prompt.lower():
+                        fig = px.pie(dataframe)
+                    elif 'bar' in prompt.lower():
+                        fig = px.bar(dataframe)
+                    elif 'bubble' in prompt.lower():
+                        fig = px.scatter(dataframe)
+                    elif 'dot' in prompt.lower():
+                        fig = px.scatter(dataframe)
+                    elif 'time series' in prompt.lower():
+                        fig = px.line(dataframe)
+                    else:
+                        fig = px.histogram(dataframe)
+                    st.plotly_chart(fig)
 
-            with tab2:
-                if 'pie' in prompt.lower():
-                    fig = px.pie({prompt})
-                    st.pyplot(plt.gcf())
-                if 'bar' in prompt.lower():
-                    fig = px.bar({prompt})
-                    st.pyplot(plt.gcf())
-                if 'bubble' in prompt.lower():
-                    fig = px.scatter({prompt})
-                    st.pyplot(plt.gcf())
-                if 'dot' in prompt.lower():
-                    fig = px.scatter({prompt})
-                    st.pyplot(plt.gcf())
-                if 'time series' in prompt.lower():
-                    fig = px.line({prompt})
-                    st.pyplot(plt.gcf())
-                else:
-                    fig = px.histogram({prompt})
-                    st.pyplot(plt.gcf())
+                with tab3:
+                    st.write(agent.explain())
 
+                with tab4:
+                    st.write(f"生成代码 :")
+                    st.write(agent.last_code_executed)
 
-            with tab3:
-                st.write(agent.explain())
-
-
-            with tab4:
-                st.write(f" {prompt}的生成代码 :")
-                st.write(agent.last_code_executed)
-
-            with ((((tab5)))):
-                try:
+                with tab5:
+                    try:
                         clarification_questions = agent.clarification_questions(response)
                         st.write("\n".join(clarification_questions))
                     except Exception as e:
@@ -208,11 +197,9 @@ if uploaded_files:
 
             except Exception as e:
                 st.error(f"An error occurred: {e}")
-
-
-                    # if the question is empty give a message
     else:
-        st.warning("请提问")
+        st.warning("空文件无法生成回复")
+
 
 
 
