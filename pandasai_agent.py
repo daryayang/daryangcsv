@@ -156,13 +156,14 @@ if st.button("生成回复"):
         with st.spinner("计算中..."):
             try:
                 response = agent.chat(prompt)
-                tab1, tab2, tab3, tab4, tab5 = st.tabs([
-                    "Generated Response",
-                    "Generated Chart",
-                    "Explanation",
-                    "Generated Code",
-                    "Clarification Questions"
-                ])
+                if isinstance(response, str):
+                    tab1, tab2, tab3, tab4, tab5 = st.tabs([
+                        "Generated Response",
+                        "Generated Chart",
+                        "Explanation",
+                        "Generated Code",
+                        "Clarification Questions"
+                    ])
                 with tab1:
                     st.write(response)
 
@@ -194,11 +195,17 @@ if st.button("生成回复"):
 
                 with tab5:
                     try:
-                        clarification_questions = agent.clarification_questions(response)
-                        st.write("\n".join(clarification_questions))
-                    except Exception as e:
-                        st.error(f"An error occurred while getting clarification questions: {e}")
-
+                            clarification_questions = agent.clarification_questions(response)
+                            if isinstance(clarification_questions, list):
+                                st.write("\n".join(clarification_questions))
+                            elif isinstance(clarification_questions, str):
+                                st.write(clarification_questions)
+                            else:
+                                st.error(f"Unexpected clarification questions type: {type(clarification_questions)}")
+                        except Exception as e:
+                            st.error(f"An error occurred while getting clarification questions: {e}")
+                else:
+                    st.error(f"Unexpected response type: {type(response)}")
             except Exception as e:
                 st.error(f"An error occurred: {e}")
     else:
