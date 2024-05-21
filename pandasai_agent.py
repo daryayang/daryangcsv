@@ -164,37 +164,37 @@ if st.button("生成回复"):
                         "Generated Code",
                         "Clarification Questions"
                     ])
-                with tab1:
-                    st.write(response)
+                    with tab1:
+                        st.write(response)
 
-                with tab2:
-                    try:
-                        df_numeric = dataframe.select_dtypes(include=['number'])
-                        if 'pie' in prompt.lower():
-                            fig = px.pie(df_numeric)
-                        elif 'bar' in prompt.lower():
-                            fig = px.bar(df_numeric)
-                        elif 'bubble' in prompt.lower():
-                            fig = px.scatter(df_numeric)
-                        elif 'dot' in prompt.lower():
-                            fig = px.scatter(df_numeric)
-                        elif 'time series' in prompt.lower():
-                            fig = px.line(df_numeric)
-                        else:
-                            fig = px.histogram(df_numeric)
-                        st.plotly_chart(fig)
-                    except Exception as e:
-                        st.error(f"An error occurred while generating the chart: {e}")
+                    with tab2:
+                        try:
+                            df_numeric = dataframe.select_dtypes(include=['number'])
+                            if 'pie' in prompt.lower():
+                                fig = px.pie(df_numeric)
+                            elif 'bar' in prompt.lower():
+                                fig = px.bar(df_numeric)
+                            elif 'bubble' in prompt.lower():
+                                fig = px.scatter(df_numeric)
+                            elif 'dot' in prompt.lower():
+                                fig = px.scatter(df_numeric)
+                            elif 'time series' in prompt.lower():
+                                fig = px.line(df_numeric)
+                            else:
+                                fig = px.histogram(df_numeric)
+                            st.plotly_chart(fig)
+                        except Exception as e:
+                            st.error(f"An error occurred while generating the chart: {e}")
 
-                with tab3:
-                    st.write(agent.explain())
+                    with tab3:
+                        st.write(agent.explain())
 
-                with tab4:
-                    st.write(f"生成代码 :")
-                    st.write(agent.last_code_executed)
+                    with tab4:
+                        st.write(f"生成代码 :")
+                        st.write(agent.last_code_executed)
 
-                with tab5:
-                    try:
+                    with tab5:
+                        try:
                             clarification_questions = agent.clarification_questions(response)
                             if isinstance(clarification_questions, list):
                                 st.write("\n".join(clarification_questions))
@@ -210,6 +210,7 @@ if st.button("生成回复"):
                 st.error(f"An error occurred: {e}")
     else:
         st.warning("空文件无法生成回复")
+
 
 
 
