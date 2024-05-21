@@ -110,7 +110,7 @@ if uploaded_files:
         st.write(df_drop_null)
 
 # define preffered llm
-    llm = OpenAI(api_token='OPEN_AI_API_KEY',model="gpt-3.5-turbo-1106")
+    llm = OpenAI(api_token=OPEN_AI_API_KEY,model="gpt-3.5-turbo-1106")
 
 # create agent
 
