@@ -12,7 +12,7 @@ from pandasai.skills import skill
 # Set plot option for streamlit
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
-# Set maximum row,column size for uploaded files
+# Set maximum row, column size for uploaded files
 pd.set_option("display.max_rows", None)
 pd.set_option("display.max_columns", None)
 pd.set_option("display.width", None)
@@ -179,11 +179,3 @@ if uploaded_file:
         st.write("给定的数据为空，请上传完整文件以提问")
 else:
     st.warning("请上传数据文件")
-
-
-
-
-
-
-
-
